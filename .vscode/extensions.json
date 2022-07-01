@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "eamodio.gitlens",
+    "stylelint.vscode-stylelint",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "streetsidesoftware.code-spell-checker",
+    "styled-components.vscode-styled-components",
+    "vivaxy.vscode-conventional-commits",
+    "SonarSource.sonarlint-vscode",
+    "esbenp.prettier-vscode",
+    "firsttris.vscode-jest-runner",
+    "dbaeumer.vscode-eslint"
+  ]
+}
