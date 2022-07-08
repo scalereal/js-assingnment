@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="" t="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Rubik:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Book Ticket</title>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="heading">Book Tickets</h1>
+        <form class="form" method="post">
+            <input type="text" class="search-bar" placeholder="search" onfocus="this.placeholder=''" 
+            onblur="this.placeholder='search'">
+        </form>
+    </header>
+    <div id="app">
+        
+        <div class="movie-card">
+            
+        </div>
+    </div>
+    <div class="no-movie-found">
+         <div class="no-result">
+             <h2 class="section-item"> Sorry, there is no result for keyword you searched.</h2>
+             <img  class="section-img" src="MovieNotFound.png" alt="result not found">
+         </div>
+         
+    </div>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+    <script type="module" src="main.js"></script>  
+    
+</body>
+
 </html>
