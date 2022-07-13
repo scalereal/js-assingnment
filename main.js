@@ -5,7 +5,7 @@ const imgPath = "https://image.tmdb.org/t/p/w1280";
 const searchApi = `${baseUrl}/search/movie?&api_key=${key}`;
 const section = document.querySelector(".section");
 const main = document.querySelector(".main");
-const movieList = document.querySelector(".movieList");
+const movielist = document.querySelector(".movielist");
 const form = document.querySelector(".form");
 const search = document.querySelector(".search");
 let query = "";
@@ -16,21 +16,22 @@ const getMovies = async (query) => {
   if (data.results.length > 0) {
     showMovies(data.results.slice(0, 15));
     section.style.display = "none";
-    movieList.style.display = "block";
+    movielist.style.display = "block";
   } else {
     section.style.display = "block";
-    movieList.style.display = "none";
+    movielist.style.display = "none";
   }
 };
 getMovies(query);
 
 const showMovies = (data) => {
+  main.innerHTML ='';
   data.forEach((result) => {
     const imagePath =
-      result.posterPath === null
+      result.poster_path === null
         ? "no-image-icon-13.png"
-        : imgPath + result.posterPath;
-    const { posterPath, title } = result;
+        : imgPath + result.poster_path;
+    const { poster_path, title } = result;
     const box = document.createElement("div");
 
     box.classList.add("card");
