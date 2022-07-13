@@ -1,25 +1,25 @@
 const key = "18acb5642976765d66ed9ea326327f5c";
-const BASEURL = "https://api.themoviedb.org/3";
-const APIURL = `${BASEURL}/discover/movie?sort_by=popularity.desc&api_key=${key}`;
-const IMGPATH = "https://image.tmdb.org/t/p/w1280";
-const SEARCHAPI = `${BASEURL}/search/movie?&api_key=${key}`;
+const baseUrl = "https://api.themoviedb.org/3";
+const apiUrl = `${baseUrl}/discover/movie?sort_by=popularity.desc&api_key=${key}`;
+const imgPath = "https://image.tmdb.org/t/p/w1280";
+const searchApi = `${baseUrl}/search/movie?&api_key=${key}`;
 const section = document.querySelector(".section");
 const main = document.querySelector(".main");
-const movielist = document.querySelector(".movielist");
+const movieList = document.querySelector(".movieList");
 const form = document.querySelector(".form");
 const search = document.querySelector(".search");
 let query = "";
 const getMovies = async (query) => {
-  const url = query === "" ? APIURL : SEARCHAPI + "&query=" + query;
+  const url = query === "" ? apiUrl : searchApi + "&query=" + query;
   const response = await fetch(url);
   const data = await response.json();
   if (data.results.length > 0) {
     showMovies(data.results.slice(0, 15));
     section.style.display = "none";
-    movielist.style.display = "block";
+    movieList.style.display = "block";
   } else {
     section.style.display = "block";
-    movielist.style.display = "none";
+    movieList.style.display = "none";
   }
 };
 getMovies(query);
@@ -27,10 +27,10 @@ getMovies(query);
 const showMovies = (data) => {
   data.forEach((result) => {
     const imagePath =
-      result.poster_path === null
+      result.posterPath === null
         ? "no-image-icon-13.png"
-        : IMGPATH + result.poster_path;
-    const { poster_path, title } = result;
+        : imgPath + result.posterPath;
+    const { posterPath, title } = result;
     const box = document.createElement("div");
 
     box.classList.add("card");
