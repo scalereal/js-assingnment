@@ -8,6 +8,10 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "jest": "^28.1.2",
     "vite": "^2.9.9"
+  },
+  "dependencies": {
+    "axios": "^0.27.2"
   }
 }
