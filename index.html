@@ -1,13 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="image/favicon.svg" />
+  <title>Netflix</title>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <link
+        href="https://fonts.googleapis.com/css2?family=Monsterrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
   </head>
+
   <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+   
+    <div class="container">
+      <div class="navigation flex">
+        <div class="logo">
+          <img src="image/logo.png" alt="Netflix-logo">
+        </div>
+
+        <div class="navbar flex" id="navbar">
+          <div class="left-nav flex">
+            <ul class="flex menu">
+              <a><li>Home</li></a>
+              <a><li>TV Shows</li></a>
+              <a><li>Movies</li></a>
+              <a><li>Top Picks</li></a>
+              <a><li>My list</li></a>
+            </ul>
+          </div>
+
+          <div class="right-nav flex">
+              <form id="form">
+                <input type="text" placeholder="Search" id="search" class="search">
+              </form>          
+          </div>
+        </div>
+        
+        
+
+        <span class="togglebtn" onclick="toggle()">&#9776;</span>
+
+      </div>
+      
+         <main id="main">
+          
+                <div class="movie">
+                  <img src="" alt="movie-poster">
+                  <div class="movie-info">
+                    <h3>Movie Title</h3>
+                    <span class="green">9.8</span>
+                  </div>
+        
+                  <div class="overview">
+                    <h3>Overview</h3>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                  </div>
+                </div>       
+        </main>
+    </div>
+
+    
+
+    <script src="main.js"></script>
+    
   </body>
 </html>
