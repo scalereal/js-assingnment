@@ -50,39 +50,39 @@ h1, h2, h3, h4, h5 {
   border: 1px solid #000;
   outline: none;
 }
-.main-wrapper .no-results-wrapper p {
+.no-results-wrapper p {
   color: #000;
   font-weight: 600;
   text-align: center;
   margin: 50px 0 80px;
 }
-.main-wrapper .movie-grid {
+.movie-grid {
   display: flex;
   flex-wrap: wrap;
   margin: 0 -10px -20px;
 }
 
-.main-wrapper .movie-grid .movie-grid-item {
+.movie-grid .movie-grid-item {
   flex: 0 0 33.33%;
   max-width: 33.33%;
   padding: 0 10px 20px;
 }
-.main-wrapper .movie-grid .movie-grid-item .movie-grid-inner {
+.movie-grid .movie-grid-item .movie-grid-inner {
   position: relative;
   cursor: pointer;
 }
 
-.main-wrapper .movie-grid .movie-grid-item img {
+ .movie-grid .movie-grid-item img {
   width: 100%;
   max-width: 100%;
   height: auto;
   border-radius: 20px;
 }
-.main-wrapper .movie-grid .movie-grid-item .movie-grid-inner:hover .movie-content{
+.movie-grid .movie-grid-item .movie-grid-inner:hover .movie-content{
   opacity: 1;
   visibility: visible;
 }
-.main-wrapper .movie-grid .movie-grid-item  .movie-grid-inner .movie-content {
+.movie-grid .movie-grid-item  .movie-grid-inner .movie-content {
   transition: 0.3s all;
   width: 100%;
   height: 100%;
@@ -100,13 +100,13 @@ h1, h2, h3, h4, h5 {
   flex-direction: column;
   border-radius: 20px;
 }
-.main-wrapper .movie-grid .movie-grid-item .movie-content h3 {
+.movie-grid .movie-grid-item .movie-content h3 {
   color: #fff;
   font-size: 24px;
   font-weight: 600;
   font-family: 'Rubik', sans-serif;
 }
-.main-wrapper .movie-grid .movie-grid-item .movie-content .book-now-btn {
+.book-now-btn {
   background-color: #352C9A;
   padding: 10px;
   display: flex;
@@ -126,10 +126,10 @@ h1, h2, h3, h4, h5 {
   font-weight: 500;
   font-family: 'Rubik', sans-serif;
 }
-.main-wrapper .movie-grid .movie-grid-item .movie-content .book-now-btn:hover,.main-wrapper .movie-grid .movie-grid-item .movie-content .book-now-btn:active  {
+.book-now-btn:hover, .book-now-btn:active  {
   background-color: #724FD8;
 }
-.main-wrapper .movie-grid .movie-grid-item .movie-content .book-now-btn:active {
+.book-now-btn:active {
   text-decoration: underline;
 }
 
@@ -139,10 +139,10 @@ h1, h2, h3, h4, h5 {
   .main-wrapper h1 {
     font-size: 36px;
   }
-  .main-wrapper .movie-grid .movie-grid-item .movie-content h3 {
+  .movie-grid .movie-grid-item .movie-content h3 {
     font-size: 22px;
   }
-  .main-wrapper .movie-grid .movie-grid-item {
+  .movie-grid .movie-grid-item {
     flex: 0 0 50%;
     max-width:  50%;
   } 
@@ -151,13 +151,13 @@ h1, h2, h3, h4, h5 {
   .main-wrapper h1 {
     font-size: 32px;
   }
-  .main-wrapper .movie-grid .movie-grid-item .movie-content h3 {
+  .movie-grid .movie-grid-item .movie-content h3 {
     font-size: 20px;
   }
-  .main-wrapper .movie-grid {
+  .movie-grid {
     margin: 0 0 -20px;
   }
-  .main-wrapper .movie-grid .movie-grid-item {
+  .movie-grid .movie-grid-item {
     flex: 0 0 100%;
     max-width:  100%;
     padding: 0 0 20px;
