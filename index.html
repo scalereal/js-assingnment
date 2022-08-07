@@ -17,14 +17,20 @@
     <div id="app">
       <main class="main-wrapper">
         <div class="container">
-            <div class="main-inner-wrapper">
+            <div class="main-inner-wrapper" >
                 <h1>
                     Movie list
                 </h1>
                 <form class="search-bar-wrapper" id="search_bar_wrapper">
                     <input type="search" id="search" placeholder="Search">
                 </form>
-                <div class="movie-grid" id="movie-grid"></div>
+                <div class="no-results-wrapper" id="no_results_wrapper">
+                  <p>Sorry, there is no result for keyword you searched</p>
+                  <img src="images/no-results-img.png" alt="no-results-img">
+                </div>
+                <div class="movie-grid" id="movie_grid">
+
+                </div>
             </div>
         </div>
       </main>
