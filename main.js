@@ -1,6 +1,6 @@
-const APIURL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
-const IMGPATH = "https://image.tmdb.org/t/p/w1280";
-const SEARCHAPI = "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
+const api_url = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
+const img_path = "https://image.tmdb.org/t/p/w1280";
+const search_api = "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
 const movieGrid = document.querySelector("#movie_grid")
 const getMovies = async (api) => {
     const response = await fetch(api)
@@ -24,20 +24,30 @@ const showMovies = (data) => {
         (item) => {
             const movieGridItem = document.createElement("div")
             movieGridItem.classList.add("movie-grid-item")
-            movieGridItem.innerHTML = `
-                <div class = "movie-grid-inner">
-                            <img src="${IMGPATH + item.poster_path}" alt="banner-image"/>
-                            <div class="movie-content">
-                                <h3>${item.original_title}</h3>
-                                <a href="" class="book-now-btn" title="book-now-button">Book now</a>
-                            </div> 
-                </div>
-            `;
+            var movieGridInnerTag = document.createElement("div")
+            movieGridInnerTag.classList.add("movie-grid-inner")
+            var imgTag = document.createElement("img")
+            imgTag.src = img_path + item.poster_path 
+            imgTag.alt = "banner-image"
+            var movieContentTag = document.createElement("div")
+            movieContentTag.classList.add("movie-content")
+            var h3Tag = document.createElement("h3")
+            h3Tag.classList.add("h3-tag")
+            var anchorTag = document.createElement("a")
+            anchorTag.classList.add("book-now-btn")
+            anchorTag.title = "book-now-btn"
+            anchorTag.innerHTML = "book now"
+            h3Tag.innerHTML = item.original_title
+            movieContentTag.appendChild(h3Tag)
+            movieContentTag.appendChild(anchorTag)
+            movieGridInnerTag.appendChild(imgTag)
+            movieGridInnerTag.appendChild(movieContentTag)
+            movieGridItem.appendChild(movieGridInnerTag)
             movieGrid.appendChild(movieGridItem)
         }
     )
 }
-getMovies(APIURL);
+getMovies(api_url);
 var search_box = document.getElementById("search_bar_wrapper");
 search_box.addEventListener(
     "submit",
@@ -45,9 +55,9 @@ search_box.addEventListener(
         e.preventDefault();
         var search = document.getElementById("search")
         if (search.value != "") {
-            getMovies(SEARCHAPI + search.value)
+            getMovies(search_api + search.value)
         } else {
-            getMovies(APIURL)
+            getMovies(api_url)
         }
     }
 );
