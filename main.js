@@ -6,9 +6,9 @@ const getMovies = async (api) => {
     const response = await fetch(api)
     const data = await response.json()
     let display_size = data.results.slice(0,15)
+    console.log(display_size);
     showMovies(display_size)
 }
-
 const showMovies = (data) => {
     movieGrid.innerHTML = "";
     data.forEach(
@@ -28,15 +28,17 @@ const showMovies = (data) => {
         }
     )
 }
-
-document.querySelector("#search").addEventListener(
-    "keyup",
-    function(event) {
-        if (event.target.value != "") {
-            getMovies(SEARCHAPI + event.target.value)
+getMovies(APIURL);
+var search_box = document.getElementById("search_bar_wrapper");
+search_box.addEventListener(
+    "submit",
+    function(e){
+        e.preventDefault();
+        var search = document.getElementById("search")
+        if (search.value != "") {
+            getMovies(SEARCHAPI + search.value)
         } else {
             getMovies(APIURL)
         }
     }
-)
-getMovies(APIURL);
+);
