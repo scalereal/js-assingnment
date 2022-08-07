@@ -1,14 +1,12 @@
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #000;
   margin-top: 60px;
 }
 .container {
-  max-width: 1330px;
-  padding: 0 25px;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
 }
@@ -17,14 +15,15 @@ h1, h2, h3, h4, h5 {
   color: #000;
 }
 .main-wrapper h1 {
-  margin: 0 0 30px;
-  font-size: 40px;
+  margin: 0 0 50px;
+  font-size: 48px;
+  font-weight: 400;
 }
 .main-wrapper h1, .main-wrapper .search-bar-wrapper {
   text-align: center;
 }
 .main-wrapper .search-bar-wrapper {
-  margin: 0 auto 30px;
+  margin: 0 auto 70px;
   max-width: 300px;
   width: 100%;
   position: relative;
@@ -54,28 +53,22 @@ h1, h2, h3, h4, h5 {
   color: #000;
   font-weight: 600;
   text-align: center;
-  margin: 50px 0 80px;
+  margin: 100px 0 48px;
 }
 .movie-grid {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -10px -20px;
-}
-
-.movie-grid .movie-grid-item {
-  flex: 0 0 33.33%;
-  max-width: 33.33%;
-  padding: 0 10px 20px;
+  gap: 48px 75px;
 }
 .movie-grid .movie-grid-item .movie-grid-inner {
   position: relative;
   cursor: pointer;
 }
 
- .movie-grid .movie-grid-item img {
-  width: 100%;
+.movie-grid .movie-grid-item img {
+  width: 350px;
   max-width: 100%;
-  height: auto;
+  height: 374px;
   border-radius: 20px;
 }
 .movie-grid .movie-grid-item .movie-grid-inner:hover .movie-content{
@@ -134,7 +127,17 @@ h1, h2, h3, h4, h5 {
 }
 
 /*media-css*/
-
+@media screen and (max-width: 1199px) {
+  .movie-grid {
+    justify-content: center;
+  }
+  .main-wrapper h1 {
+    margin: 0 0 30px;
+  }
+  .main-wrapper .search-bar-wrapper {
+    margin: 0 auto 30px;
+  }
+}
 @media screen and (max-width: 991px) {
   .main-wrapper h1 {
     font-size: 36px;
@@ -142,24 +145,23 @@ h1, h2, h3, h4, h5 {
   .movie-grid .movie-grid-item .movie-content h3 {
     font-size: 22px;
   }
-  .movie-grid .movie-grid-item {
-    flex: 0 0 50%;
-    max-width:  50%;
-  } 
+  .movie-grid {
+    gap: 40px;
+    justify-content: center;
+  }
+  .movie-grid .movie-grid-item img {
+    width: 300px;
+    height: 320px;
+  }
 }
 @media screen and (max-width: 575px) {
   .main-wrapper h1 {
     font-size: 32px;
   }
+  .main-wrapper .search-bar-wrapper {
+     max-width: 250px;
+  }
   .movie-grid .movie-grid-item .movie-content h3 {
     font-size: 20px;
   }
-  .movie-grid {
-    margin: 0 0 -20px;
-  }
-  .movie-grid .movie-grid-item {
-    flex: 0 0 100%;
-    max-width:  100%;
-    padding: 0 0 20px;
-  } 
 }
