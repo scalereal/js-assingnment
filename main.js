@@ -19,7 +19,7 @@ const getMovies = async (api) => {
       }
 }
 const showMovies = (data) => {
-    movieGrid.innerHTML = "";
+    movieGrid.textContent = "";
     data.forEach(
         (item) => {
             const movieGridItem = document.createElement("div")
@@ -36,7 +36,8 @@ const showMovies = (data) => {
             let anchorTag = document.createElement("a")
             anchorTag.classList.add("book-now-btn")
             anchorTag.title = "book-now-btn"
-            anchorTag.innerHTML = "book now"
+            anchorTag.id = "book-now-btn"
+            anchorTag.textContent = "book now";
             h3Tag.innerHTML = item.original_title
             movieContentTag.appendChild(h3Tag)
             movieContentTag.appendChild(anchorTag)
