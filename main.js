@@ -7,7 +7,6 @@ const getMovies = async (api) => {
     const data = await response.json()
     let display_size = data.results.slice(0,15)
     let movie_grid = document.getElementById("movie_grid");
-    console.log(movie_grid)
     let no_results = document.getElementById("no_results_wrapper");
     if (display_size.length) {
         movie_grid.style.display = "flex";
