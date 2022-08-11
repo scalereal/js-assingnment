@@ -35,7 +35,6 @@ const showMovies = (data) => {
             let anchorTag = document.createElement("a")
             anchorTag.classList.add("book-now-btn")
             anchorTag.title = "book-now-btn"
-            anchorTag.id = "book-now-btn"
             anchorTag.textContent = "book now";
             h3Tag.innerHTML = item.original_title
             movieContentTag.appendChild(h3Tag)
