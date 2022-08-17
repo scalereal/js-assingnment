@@ -1,17 +1,15 @@
-header{
-display:flex;
-flex-direction: column;
-align-items:center;
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.heading{
-   
-    font-family: 'Rubik';
-    font-size: 50px;
+.heading {
+    font-family: "Roboto Mono", monospace;
+    font-size: 48px;
     font-weight: 400;
-    line-height: 60px;
     margin-top: 25px;
 }
-.form{
+.form {
     margin-top: 20px;
     margin-bottom: 50px;
 }
@@ -19,26 +17,25 @@ input[type="text"] {
     padding: 10px 10px;
     width: 300px;
     height: 20px;
-    font-family: "Rubik";
+    font-family: "Rubik", sans-serif;
     font-size: 16px;
-      
     text-align: left;
     background: transparent url(search.png);
     background-repeat: no-repeat;
-    background-position: right;  
+    background-position: right;
 }
-.main{
-    display:flex;
-    flex-wrap: wrap; 
-    align-content:center;
-    gap:48px 75px;
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 48px 75px;
 }
-.movielist{
+.movielist {
     margin: 66px auto 149px auto;
-       max-width:1200px;
+    max-width: 1200px;
 }
-.card{
-    position: relative; 
+.card {
+    position: relative;
 }
 .card::after {
     content: "";
@@ -48,12 +45,12 @@ input[type="text"] {
     width: 100%;
     height: 100%;
     border-radius: 20px;
-  }
-.card img{
-    height:374px ;
-    width:350px;
+}
+.card img {
+    height: 374px;
+    width: 350px;
     border-radius: 20px;
-    box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.25); 
+    box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.25);
 }
 .card:hover::after {
     opacity: 0.6;
@@ -70,17 +67,17 @@ input[type="text"] {
 .card:hover .card-item {
     display: block;
 }
-.card-item{
+.card-item {
     position: absolute;
     text-align: center;
-    font-family: "Rubik";
+    font-family: "Rubik", sans-serif;
     font-weight: 600;
     overflow: hidden;
     white-space: wrap;
     text-overflow: ellipis;
-    max-width: 120px;
+    max-width: 100%;
     font-size: 25px;
-    color:#ffffff;
+    color: #ffffff;
     display: none;
     transform: translate(-50%, -50%);
     justify-content: center;
@@ -89,56 +86,54 @@ input[type="text"] {
     left: 50%;
     z-index: 10;
 }
-.btn{
-        position: absolute;
-        left: 29.43%;
-        right: 29.14%;
-        top: 76.74%;
-        bottom: 11.76%;
-        height: 43px;
-        width: 145px;
-        background-color: #352C9A;
-        color: #ffffff;
-        border: none;
-        font-family: "Rubik";
-        font-size: 16px;
-        font-weight: 600;
-        display: none;
-    }
-    .btn:hover {
-        background-color: #724fd8;
-    }
-    .btn:active {
-        background-color: #724fdf;
-        text-decoration: underline;
-    }
-    .btn:disabled {
-        background-color: #626262;
-    }
- .noresult{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    } 
-.noresult-area{
+.btn {
+    position: absolute;
+    left: 29.43%;
+    right: 29.14%;
+    top: 76.74%;
+    bottom: 11.76%;
+    height: 43px;
+    width: 145px;
+    background-color: #352c9a;
+    color: #ffffff;
+    border: none;
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    display: none;
+}
+.btn:hover {
+    background-color: #724fd8;
+}
+.btn:active {
+    background-color: #724fdf;
+    text-decoration: underline;
+}
+.btn:disabled {
+    background-color: #626262;
+}
+.noresult {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.noresult-text{
+.noresult-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.noresult-text {
     margin-bottom: 48px;
-    font-family: 'Rubik';
+    font-family: "Rubik", sans-serif;
     font-weight: 600;
     font-size: 32px;
- }
-.noresult-img {
-   max-width: 500px;
-    width: 100%;
-     margin: 24px auto 81px auto;
-
 }
-@media(max-width:480px) {
-    
+.noresult-img {
+    max-width: 500px;
+    width: 100%;
+    margin: 24px auto 81px auto;
+}
+@media (max-width: 480px) {
     .main {
         width: 100%;
     }
@@ -156,21 +151,16 @@ input[type="text"] {
         left: 88px;
         top: 246px;
         border-radius: 0px;
-
     }
     .noresult-area {
         width: 100%;
     }
-  .noresult-img {
+    .noresult-img {
         width: 620px;
         height: 447px;
         margin: 24px auto 81px auto;
     }
     .noresult-text {
-       
         margin-bottom: 24px;
     }
 }
-
-
- 
