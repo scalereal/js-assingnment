@@ -21,15 +21,15 @@ header {
   padding: 1rem;
   display: flex;
   justify-content: center;
-  background-color: var(--primary-color);
+  background-color: white;
 }
 
 .search {
   background-color: white;
-  border: 2px solid white;
-  border-radius: 50px;
+  border: 1px solid black;
+  border-radius: 0px;
   font-size: 1rem;
-  padding: 1rem;
+  padding: 0.5rem;
   color: black;
 }
 
@@ -45,64 +45,66 @@ header {
 
 
 #main{
-  display: flex;
+  display: inline-flex;
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 30px 48px;
 }
 
 .card {
-  
-  height: 374px;
-  width: 350px;
-  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.25);
-  
-  border-radius: 20px;
-  position: relative;
-  
+position: relative;
 
+height: 374px;
+width: 350px;
+box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
 }
 
 
 
 .title{
-overflow: hidden;
+  position: relative;
+  left: 31.43%;
+  right: 31.43%;
+  top: 42.51%;
+  bottom: 50%;
   font-family: 'Rubik';
-font-style: normal;
-font-weight: 600;
-font-size: 24px;
-color: #FFFFFF;
-position: absolute;
-left: 31.43%;
-right: 31.43%;
-top: 42.51%;
-bottom: 50%;
-
-
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.004em;
+  color: #FFFFFF;
 }
+
+
+
 .button{
+  position: absolute !important;
+  left:50%;
+  transform: translateX(-50%);
+  
+  bottom: 56px;
   font-family: 'Rubik';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-color: white;
-background-color: #352C9A;
-border: none;
-position:absolute;
-left: 29.43%;
-right: 29.14%;
-top: 76.74%;
-bottom: 15.76%;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  
+  background-color: #352C9A;
+  color: white;
+  min-width :145px; ;
+  height: 43px;
+  border-style: none;
 }
 
-.card::after {
+/* .card {
   content: '';
   position: absolute;
   width: 100%;
   height: 100%;
   transition: 250ms ease-out;
   border-radius: 20px;
-}
+} */
 .card button {
   color: #fff;
   opacity: 0;
@@ -117,7 +119,7 @@ bottom: 15.76%;
   z-index: 2;
   transition: 250ms ease-out;
 }
-.card:hover::after {
+.card:hover {
   opacity: 0.6;
   background-color: #626262;
 }
