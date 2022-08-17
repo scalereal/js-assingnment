@@ -1,34 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Rubik:wght@600&display=swap" rel="stylesheet">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <title>Search Movie</title>
+    </head>
+    <body>
+        <header class="header">
+            <h1 class="heading">Movie List</h1>
+            <form class="form">
+                <input type="text" placeholder="search" class="search" />
+            </form>
+        </header>
+        <div class="movielist">
+            <main class="main"></main>
+        </div>
 
-    <title>Search Movie</title>
-  </head>
-  <body>
-    <header class="header">
-      <h1 class="heading">Movie List</h1>
-      <form class="form">
-        <input type="text" placeholder="search"  class="search">
-      </form>
-    </header>
-    <div class="movielist">
-    <main class="main">
-    </main>
-    </div>
-    
+        <div class="noresult">
+            <div class="noresult-area">
+                <h3 class="noresult-text">
+                    Sorry, there is no result for keyword you searched.
+                </h3>
+                <img
+                    class="noresult-img"
+                    src="noresult.png"
+                    alt="result not found"
+                />
+            </div>
+        </div>
 
-    <div class="noresult">
-      <div class="noresult-area">
-        <h3 class="noresult-text">Sorry, there is no result for keyword you searched.</h3>
-        <img  class="noresult-img" src="noresult.png" alt="result not found">
-      </div>
-    </div>
-    
-    <script src="main.js"></script>
-  </body>
+        <script src="main.js"></script>
+    </body>
 </html>
