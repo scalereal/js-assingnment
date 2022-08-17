@@ -9,21 +9,6 @@ const movielist = document.querySelector(".movielist");
 const form = document.querySelector(".form");
 const search = document.querySelector(".search");
 
-const getMovie = async (url) => {
-    const res = await fetch(url);
-    const data = await res.json();
-
-    if (data.results.length > 0) {
-        showMovie(data.results.slice(0, 15));
-        noresult.style.display = "none";
-        movielist.style.display = "block";
-    } else {
-        noresult.style.display = "block";
-        movielist.style.display = "none";
-    }
-};
-getMovie(POPULAR_MOVIES_URL);
-
 const showMovie = (data) => {
     data.forEach((result) => {
         const imagePath = IMG + result.poster_path;
@@ -44,6 +29,21 @@ const showMovie = (data) => {
         main.appendChild(box);
     });
 };
+
+const getMovie = async (url) => {
+    const res = await fetch(url);
+    const data = await res.json();
+
+    if (data.results.length > 0) {
+        showMovie(data.results.slice(0, 15));
+        noresult.style.display = "none";
+        movielist.style.display = "block";
+    } else {
+        noresult.style.display = "block";
+        movielist.style.display = "none";
+    }
+};
+getMovie(POPULAR_MOVIES_URL);
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
