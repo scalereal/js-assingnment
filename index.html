@@ -4,10 +4,36 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>JS Assignment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;&display=swap" rel="stylesheet">
+    <link href="reset.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+    <div id="app">
+      <main class="main-wrapper">
+        <div class="container">
+            <div class="main-inner-wrapper" >
+                <h1>
+                    Movie list
+                </h1>
+                <form class="search-bar-wrapper" id="search_bar_wrapper">
+                    <input type="search" id="search" placeholder="Search">
+                </form>
+                <div class="no-results-wrapper" id="no_results_wrapper">
+                  <p>Sorry, there is no result for keyword you searched</p>
+                  <img src="images/no-results-img.png" alt="no-results-img">
+                </div>
+                <div class="movie-grid" id="movie_grid">
+
+                </div>
+            </div>
+        </div>
+      </main>
+    </div>
+    <script src="main.js"></script>
   </body>
 </html>
