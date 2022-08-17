@@ -3,11 +3,11 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const searchURL = BASE_URL + '/search/movie?'+API_KEY;
-const movieNotFound = document.getElementById('movie-not-found');
-const main = document.getElementById('main');
 const form = document.getElementById('form');
 const search = document.getElementById('search');
 let navbar = document.getElementById("navbar");
+const main = document.getElementById('main');
+const movieNotFound = document.getElementById('movie-not-found');
 
 const toggle =() =>{
 	if(navbar.style.display == "none") {
@@ -28,31 +28,45 @@ function getMovies(url) {
 }
 
 function showMovies(data) {
-    main.innerHTML = '';
-
 		if (data.length) {
 			data.forEach(movie => {
         const {title, poster_path, vote_average, overview} = movie;
-        const movieEl = document.createElement('div');
+		
+		const movieEl = document.createElement('div');
         movieEl.classList.add('movie');
-        movieEl.innerHTML = `
-        <img src="${IMG_URL+poster_path}" alt="${title}">
-				<div class="movie-info">
-					<h3>${title}</h3>
-					<span class="${getColor(vote_average)}">${vote_average}</span>
-				</div>
 
-				<div class="overview">
-					<h3>Overview</h3>
-					${overview}
-				</div>
-        `
-        main.appendChild(movieEl);
+		const movieInfo = document.createElement('div');
+        movieInfo.classList.add('movie-info');
+
+		const movieOverview = document.createElement('div');
+        movieOverview.classList.add('overview');
+
+		const movie_poster = document.createElement('img')
+		movie_poster.src = IMG_URL+poster_path
+
+		const movie_name = document.createElement('h3')
+		movie_name.innerText = title
+
+		const rating = document.createElement('span')
+		rating.innerHTML = vote_average
+		rating.classList.add(getColor(vote_average))
+
+		const movie_overview = document.createElement('h3')
+		movie_overview.innerText = overview
+
+
+		movieInfo.appendChild(movie_name)
+		movieInfo.appendChild(rating)
+		movieOverview.appendChild(movie_overview)
+
+		movieEl.append(movie_poster, movieInfo, movieOverview)
+		main.appendChild(movieEl)
+        
 		movieNotFound.style.display = "none";
     });
-		} else {
-			movieNotFound.style.display = "block";
-		}
+	} else {
+		movieNotFound.style.display = "block";
+	}
     
 }
 
