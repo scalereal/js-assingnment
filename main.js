@@ -20,14 +20,16 @@ const toggle =() =>{
 	}
 }
 
-function getMovies(url) {
-    fetch(url).then(res => res.json()).then(data => {
-				showMovies(data.results.slice(0,15));			
-		})
+function getColor(vote) {
+  if(vote>=8) {
+      return "green"
+  } else if(vote >= 5) {
+      return "orange"
+  } else {
+      return "red"
+  }
 }
 
-getMovies(API_URL);
- 
 function showMovies(data) {
 	main.innerHTML = '';
 	if (data.length) {
@@ -71,14 +73,10 @@ function showMovies(data) {
     
 }
 
-function getColor(vote) {
-    if(vote>=8) {
-        return "green"
-    } else if(vote >= 5) {
-        return "orange"
-    } else {
-        return "red"
-    }
+function getMovies(url) {
+  fetch(url).then(res => res.json()).then(data => {
+      showMovies(data.results.slice(0,15));			
+  })
 }
 
 form.addEventListener('submit', (e) => {
@@ -95,3 +93,5 @@ form.addEventListener('submit', (e) => {
 		}
 	}
 })
+
+getMovies(API_URL);
