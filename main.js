@@ -20,16 +20,13 @@ const toggle =() =>{
 	}
 }
 
-
-getMovies(API_URL);
-
-
 function getMovies(url) {
     fetch(url).then(res => res.json()).then(data => {
 				showMovies(data.results.slice(0,15));			
 		})
 }
 
+getMovies(API_URL);
  
 function showMovies(data) {
 	main.innerHTML = '';
