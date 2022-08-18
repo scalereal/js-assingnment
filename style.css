@@ -1,8 +1,172 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffff;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+header {
+  margin: 0 auto;
+  width: 100%;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+h1 {
+  margin: 0 0 50px;
+  font-size: 48px;
+  font-weight: 400;
+  font-family: "Roboto Mono", monospace;
+  color: #000;
+}
+
+.search {
+  background-image: url("search.png");
+  background-size: 20px;
+  background-position: calc(100% - 10px) center;
+  background-repeat: no-repeat;
+  background-color: white;
+  border: 1px solid #626262;
+  border-radius: 0px;
+  font-size: 1rem;
+  padding: 0.5rem;
+  color: black;
+  width: 340px;
+}
+
+.search::placeholder {
+  color: black;
+}
+.search:focus::placeholder {
+  color: transparent;
+}
+
+.search:focus {
+  outline: none;
+}
+
+#main {
+  display: flex;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 80px auto 0;
+  flex-wrap: wrap;
+  gap: 48px 75px;
+}
+
+.card {
+  display: block;
+  cursor: pointer;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 374px;
+  width: 350px;
+  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+}
+
+.title {
+  position: absolute;
+  left: 31.43%;
+  top: 42.51%;
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  text-align: center;
+  width: 130px;
+  height: 56px;
+  color: #ffffff;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 56px;
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  background-color: #352c9a;
+  color: white;
+  min-width: 145px;
+  height: 43px;
+  border-style: none;
+}
+.button:hover {
+  background-color: #724fd8;
+}
+
+.button:active {
+  text-decoration: underline;
+}
+
+.card button {
+  color: #fff;
+  opacity: 0;
+  z-index: 2;
+  transition: 250ms ease-out;
+}
+.card h3 {
+  color: #fff;
+  opacity: 0;
+  z-index: 2;
+  transition: 250ms ease-out;
+}
+
+.card::after {
+  border-radius: 20px;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  visibility: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(98, 98, 98, 0.6);
+  content: "";
+}
+
+.card:hover .button {
+  opacity: 1;
+}
+
+.card:hover .title {
+  display: block;
+  opacity: 1;
+}
+
+.card:hover::after {
+  opacity: 1;
+  visibility: 1;
+}
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error-message {
+  margin-top: 96px;
+  margin-bottom: 48px;
+  font-family: "Rubik";
+  font-size: 32px;
+}
+
+.error-image {
+  max-width: 500px;
+  width: 100%;
 }
