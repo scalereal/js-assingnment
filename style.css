@@ -1,8 +1,255 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+*{
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body{
+  background-color: rgb(255, 255, 255);
+}
+
+.container{
+  width: 100%;
+  position: relative;
+}
+
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 1%;
+}
+
+.navigation{
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+}
+
+.logo{
+  width: 10%;
+}
+
+.logo img{
+  width: 100px;
+  padding: 2%;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.menu{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.navbar{
+  width: 85%;
+}
+
+.left-nav{
+  width: 65%;
+  align-items: center;
+}
+
+.right-nav{
+  display: flex;
+  align-items:flex-start;  
+}
+
+ul li{
+  color: rgb(255, 255, 255);
+  list-style: none;
+  font-size: 1rem;
+  margin-right: 40px;
+  cursor: pointer;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+  text-decoration-color: rgb(255, 0, 0);
+}
+
+#search{
+  background-color: transparent;
+  border: 2px solid rgb(218, 20, 20);
+  border-radius: 8px;
+  color: rgb(255, 255, 255);
+  padding: 5px;
+  margin: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.search:focus{
+  outline: 0;
+  background-color: transparent;
+}
+
+.search::placeholder{
+  color: rgb(255, 255, 255);
+}
+
+.togglebtn{
+  display:contents;
+  font-size: 30px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+}
+
+#main{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.movie {
+  width: 300px;
+  margin: 10px;
+  border-radius: 3px;
+  box-shadow: 0.2px 4px 5px rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  position:relative;
+  overflow: hidden;
+}
+
+
+.movie img{
+  width:100%;
+}
+
+.movie-info{
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem 1rem;
+  letter-spacing: 0.5px;
+}
+
+.movie-info h3{
+  margin-top: 0px;
+}
+
+.movie-info span{
+  background-color: rgb(0, 0, 0);
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.movie-info span.green{
+  color:rgb(0, 219, 0);
+}
+
+.movie-info span.orange{
+  color:rgb(255, 166, 0);
+}
+
+.movie-info span.red{
+  color:rgb(255, 0, 0);
+}
+
+.overview{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color: rgb(255, 255, 255);
+  padding: 1rem;
+  max-height: 100%;
+  transform:translateY(101%);
+  transition:transform 0.3s ease-in;
+}
+
+.movie:hover .overview{
+  transform:translateY(0)
+}
+
+#movie-not-found{
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+}
+
+#movie-not-found img{
+  justify-content: center;
+  display: flex;
+  flex-wrap:wrap;
+  margin-left: auto;
+  position: relative;
+  margin: auto;
+}
+
+/* Media Queries*/
+
+@media only screen and (max-width: 1150px){
+
+  .navbar{
+    width: 100%;
+    display: none;
+  }
+
+  .left-nav,
+  .right-nav{
+    width: 100%;
+    justify-content: flex-start;
+    margin: 20px 0;
+  }
+
+  ul li{
+    margin-right: 30px;
+  }
+
+  .togglebtn{
+    display: block;
+    font-size: 2rem;
+    color: rgb(255, 255, 255);
+    margin-top: 1px;
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+  }
+  
+  #movie-not-found img{
+    justify-content: center;
+    display: flex;
+    flex-wrap:wrap;
+    position: relative;
+    width: 950px;
+  }
+} 
+
+@media only screen and (max-width:768px){
+  #movie-not-found img{
+    justify-content: center;
+    display: flex;
+    flex-wrap:wrap;
+    position: relative;
+    width: 750px;
+  }
+}
+
+@media only screen and (max-width:550px){
+  .menu{
+    flex-direction: column;
+  }
+
+  #movie-not-found img{
+    justify-content: center;
+    display: flex;
+    flex-wrap:wrap;
+    position: relative;
+    width: 550px;
+    height: max-content;
+  }
+
+  ul li{
+    margin-bottom: 10px;
+  }
 }
