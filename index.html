@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Rubik"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Roboto Mono"
+            rel="stylesheet"
+        />
+        <title>Vite App</title>
+    </head>
+    <body>
+        <div id="app">
+            <h2 class="title">Movie List</h2>
+            <header class="center">
+                <form id="form">
+                    <input
+                        type="text"
+                        placeholder="Search"
+                        id="search"
+                        class="search"
+                    />
+                </form>
+            </header>
+            <p class="noresulttext" id="nodata"></p>
+            <img class="nopic" id="pic" src="" alt=" " />
+            <main id="movie-box">
+                <div class="box">
+                    <img id="posterimg" src="" alt="" />
+                    <div class="overlay"></div>
+                </div>
+            </main>
+        </div>
+        <script type="module" src="main.js"></script>
+    </body>
 </html>
