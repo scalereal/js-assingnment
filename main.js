@@ -9,20 +9,16 @@ const main = document.getElementById('main');
 const form = document.getElementById('form');
 const search = document.getElementById('search');
 
-
-
 function getMovies(url) {
   fetch(url).then(res => res.json()).then(data => {
     let checkData = data.results;
     let lengthData = checkData.length;
-  
     document.getElementById('nodata').textContent = '';
     document.getElementById("nodataimg").src = "" ;
     if(lengthData === 0){ 
       document.getElementById('nodata').textContent = 'Sorry, there is no result for keyword you searched.';
       document.getElementById("nodataimg").src = "/js-assingnment/readme-files/noresult.png";
     }
-    
     displayMovie(data.results);  
   })
 }
@@ -52,16 +48,13 @@ function displayMovie(data) {
       count += 1;
     }
   })
-
 }
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const searchTerm = search.value;
   if(searchTerm) {
-    
     getMovies(serachURL+'&query='+searchTerm)
-    
   }
   else{
     getMovies(API_URL)
